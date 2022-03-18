@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 
 # Application definition
 
@@ -80,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'inventory',
-        'USERNAME': 'root',
+        'USER': 'root',
         'HOST': 'localhost',
-        'PORT': 3306,
-        'PASSWORD': '',  # Your Password
+        'PORT': 3307,
+        'PASSWORD': '',
     }
 }
 
