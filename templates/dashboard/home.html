@@ -1,0 +1,35 @@
+
+
+{% extends 'partials/base.html' %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="row mt-3">
+	{% for item in product %}
+	<div class="col-md-3">
+		{% comment %} <div class="card card-product-grid">
+			<a href="{{ item.get_url }}" class="img-wrap"> <img src="{{ item.images.url }}"> </a>
+			<figcaption class="info-wrap">
+				<a href="{{ item.get_url }}" class="title">{{ item.product_name }}</a>
+				<div class="price mt-1">$ {{ item.price }}</div> <!-- price-wrap.// -->
+			</figcaption>
+		</div> {% endcomment %}
+		<div class="card">
+  			<img class="card-img-top" src="{{ item.images.url }}" alt="Card image cap">
+  			<div class="card-body">
+    			<h5 class="card-title">{{ item.name }}</h5>
+    			<p class="card-text">$ {{ item.price }}</p>
+  			</div>
+		</div>
+	</div> <!-- col.// -->
+	{% endfor %}
+</div> <!-- row.// -->
+
+</div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+</body>
+</html>
+
+{% endblock %}

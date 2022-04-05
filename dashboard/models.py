@@ -1,3 +1,4 @@
+from winreg import REG_OPTION_CREATE_LINK
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -14,7 +15,9 @@ CATEGORY = (
 
 class Product(models.Model):
     name = models.CharField(max_length=100, null=True)
+    images = models.ImageField(upload_to='photos/products')
     quantity = models.PositiveIntegerField(null=True)
+    price = models.PositiveIntegerField()
     category = models.CharField(max_length=50, choices=CATEGORY, null=True)
 
     def __str__(self):
